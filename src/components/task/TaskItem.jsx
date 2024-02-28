@@ -1,7 +1,7 @@
-import { Circle, Trashcan, Pen } from "src/icons";
+import { Circle, Trashcan, Pen, Info } from "src/icons";
 import styles from "./Task.module.css";
 
-const TaskItem = ({ task, onDelete }) => {
+const TaskItem = ({ task, handleDelete, handleEdit, displayInfo }) => {
   return (
     <div className={styles.taskItem}>
       <div className={styles.itemGroup}>
@@ -9,12 +9,15 @@ const TaskItem = ({ task, onDelete }) => {
         {task.text}
       </div>
       <div className={styles.itemGroup}>
-        <span>
+        <span onClick={handleEdit}>
           <Pen />
         </span>
 
-        <span onClick={onDelete}>
-          <Trashcan onClick={onDelete} />
+        <span onClick={handleDelete}>
+          <Trashcan />
+        </span>
+        <span onClick={displayInfo}>
+          <Info />
         </span>
       </div>
     </div>
