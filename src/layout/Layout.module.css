@@ -1,0 +1,44 @@
+.layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 60px auto 60px;
+  grid-template-areas: "layoutHeader layoutHeader layoutHeader" "layoutSide layoutMain layoutMain" "layoutSide layoutFooter layoutFooter";
+}
+
+.layoutHeader {
+  grid-area: layoutHeader;
+  background: linear-gradient(90deg, var(--aqua) 0%, var(--light-aqua) 100%);
+}
+
+.layoutMain {
+  grid-area: layoutMain;
+  width: 100vw;
+}
+
+.layoutSide {
+  grid-area: layoutSide;
+  /* width: clamp(200px, 15vw, 30vw); */
+  /* width: auto; */
+}
+
+.layoutFooter {
+  grid-area: layoutFooter;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  gap: 0.5rem;
+  color: white;
+  padding: 4px 16px;
+}
+
+.clipboard {
+  width: 32px;
+  height: 32px;
+}
+
+/* Sidebar */
+
