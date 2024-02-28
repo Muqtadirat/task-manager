@@ -1,26 +1,4 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
-  padding: 3rem 2rem;
-}
-
-.heading {
-  font-size: 40px;
-  font-weight: 400;
-  color: var(--dark-grey);
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.headingIcon {
-  width: 40px;
-  height: 40px;
-}
-
-/* .taskBody {
+.taskBody {
   margin: 2rem;
   width: 40vw;
 }
@@ -41,9 +19,9 @@
     transition: 0.3s;
   }
 
-  .groupOne {
+  .itemGroup {
     display: flex;
     align-items: center;
     gap: 8px;
   }
-} */
+}

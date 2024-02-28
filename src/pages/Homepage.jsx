@@ -1,6 +1,7 @@
 // import Form from "../components/form";
-import { Input } from "../components/shared";
-import { Calendar, Circle, Trashcan, Pen } from "src/icons";
+// import { Input } from "../components/shared";
+import TaskBody from "src/components/task";
+import { Calendar } from "src/icons";
 import styles from "./Pages.module.css";
 
 const Homepage = () => {
@@ -11,7 +12,8 @@ const Homepage = () => {
         All
       </h1>
 
-      <section className={styles.taskBody}>
+      <TaskBody />
+      {/* <section className={styles.taskBody}>
         <Input placeholder="Add Task..." />
 
         <div className={styles.taskList}>
@@ -27,7 +29,7 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
