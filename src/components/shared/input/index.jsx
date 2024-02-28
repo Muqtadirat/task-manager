@@ -22,6 +22,7 @@ const Input = ({
         onChange={onChangeHandler}
         value={value}
       />
+      <div className={styles.underline}></div>
     </div>
   );
 };
