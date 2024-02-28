@@ -1,25 +1,33 @@
 import { useState } from "react";
 import { Input } from "../shared";
 import Form from "../form";
-import { Circle, Trashcan, Pen } from "src/icons";
+import TaskItem from "./TaskItem";
 import styles from "./Task.module.css";
 
 const TaskBody = () => {
   const [task, setTask] = useState("");
   const [taskList, setTaskList] = useState([]);
+  const [idCounter, setIdCounter] = useState(0);
 
   const handleInputChange = (e) => {
     const { value } = e.target;
-
     setTask(value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    setTaskList([...taskList, task]);
-
+    const newTask = {
+      id: idCounter,
+      text: task,
+    };
+    setTaskList([...taskList, newTask]);
     setTask("");
+    setIdCounter(idCounter + 1);
+  };
+
+  const deleteTask = (id) => {
+    const newList = taskList.filter((task) => task.id !== id);
+    setTaskList(newList);
   };
 
   return (
@@ -34,17 +42,12 @@ const TaskBody = () => {
       </Form>
 
       <div className={styles.taskList}>
-        {taskList.map((taskItem, index) => (
-          <div className={styles.taskItem} key={index}>
-            <div className={styles.itemGroup}>
-              <Circle />
-              {taskItem}
-            </div>
-            <div className={styles.itemGroup}>
-              <Pen />
-              <Trashcan />
-            </div>
-          </div>
+        {taskList.map((taskItem) => (
+          <TaskItem
+            key={taskItem.id}
+            task={taskItem}
+            onDelete={() => deleteTask(taskItem.id)}
+          />
         ))}
       </div>
     </section>
