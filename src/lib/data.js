@@ -1,14 +1,19 @@
+import { Calendar, CalendarChecked, CalendarTime } from "src/icons";
+
 export const SidebarItems = [
-    {
-        title: "All",
-        href: "/",
-    },  
-    {
-        title: "Pending",
-        href: "/pending",
-    },  
-    {
-        title: "Completed",
-        href: "/",
-    },  
-]
+  {
+    title: "All",
+    href: "/",
+    Icon: Calendar,
+  },
+  {
+    title: "Pending",
+    href: "/pending",
+    Icon: CalendarTime,
+  },
+  {
+    title: "Completed",
+    href: "/completed",
+    Icon: CalendarChecked,
+  },
+];

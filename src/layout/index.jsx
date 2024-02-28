@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
         <Sidebar />
       </section>
 
-      <footer className={styles.layoutFooter}>Footer</footer>
+      {/* <footer className={styles.layoutFooter}>Footer</footer> */}
     </div>
   );
 };
